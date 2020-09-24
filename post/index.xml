@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on 郭敬聪博客初体验</title>
+    <link>https://bytej.github.io/post/</link>
+    <description>Recent content in Posts on 郭敬聪博客初体验</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 25 Sep 2020 02:01:47 +0800</lastBuildDate><atom:link href="https://bytej.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>初始java如何配置环境变量</title>
+      <link>https://bytej.github.io/post/%E5%88%9D%E5%A7%8Bjava%E5%A6%82%E4%BD%95%E9%85%8D%E7%BD%AE%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F/</link>
+      <pubDate>Fri, 25 Sep 2020 02:01:47 +0800</pubDate>
+      
+      <guid>https://bytej.github.io/post/%E5%88%9D%E5%A7%8Bjava%E5%A6%82%E4%BD%95%E9%85%8D%E7%BD%AE%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F/</guid>
+      <description>一、简单写出Java特点，写出5个以上，越多越好 简单的、开源的、面向对象的、分布式的、安全的、稳定的、与平台无关的、可解释的、多线的、动态的语言。
+开源：开放源代码 面向对象：Java是一种采用面向对象思想编程的语言，有面向对象的三大特性：封装、继承和多态。 跨平台：一次编写，多平台运行（WriteOne,RunanyWhere） 编译性：写好代码之后，需要先编译，成为字节码文件（.class）。高效、安全 动态性：在程序运行过程中。可以先决定运行的内容，修改运行内容。
+二、请写出Java的版本分类，以及每种版本的应用方向 java的版本： 2.0 确定了java的平台版本： j2me：安卓系统的应用软件。缩小版。 j2se:应用于桌面程序。标准版 j2ee:主要针对网站。企业版。
+java的语法的更改： JAVA5.0之后 javame:缩小版 javase：标准版 javaee：企业版改名 JakartaEE
+JavaMe：最小版本，通常运用于移动端开发。 JavaSe：标准版本，具备了基本的库，用于PC端进行开发。 JavaEE：企业版本，具备了开发网站的功能，用于开发网站。
+三、描述一下JAVA是如何实现跨平台的 JAVA之所以能够跨平台是因为JAVA能够在JDK自带的JRE环境中将.java文件编译成二进制字节流文件.class 这种.class的文件可以在JVM虚拟机中运行出来，所以只要不同的平台上安装了jre和jvm虚拟机，都能够将.class文件运行出来，所谓的跨平台的实质依靠jvm
+四、JDK\JRE\JVM作用及关系 Jvm: Java virtual machine，Java虚拟机，用于运行Jvm标准的语言，相当于java语言运行的一个容器。 Jre:Java runtime environment，java的运行环境 只有容器是不能单独运行的，在运行时，还需要使用其他已经定义好的类。类形成的库，成为类库。Jre= jvm +运行时必须的类库 Jdk: java development kit ,java的开发工具包，Jdk= Jre + 开发工具
+五、简述如何搭建Java开发环境 1、Oracle官网下载，www.oracle.com 菜单—产品&amp;mdash;-java&amp;mdash;-javase，点击下载jdk8u 2、Java的安装： （1）傻瓜式安装，一路点击下一步 （2）注意事项： a.安装路径：尽量不装在C盘，安装路径里不能有中文、安装路径尽量不要包含特殊符号，最好用纯英文和数字 b.jre在安装JDK的过程中会提示安装JRE，一般不需要再次安装JRE,如果一定要安装，确保安装的路径不要和JDK的安装路径重复，否则会覆盖 （3）验证是否安装成功，在CMD里进入JDK的bin所在路径，输入java -version，如果可以看到版本信息，说明成功 六、简述path的意义和配置方法 我们通常运行一个java文件时，首先要安装JDK，我们在运行.java文件时，要先用Javac .java命令将java文件编译成二进制字节码文件.class 然后用Java命令运行.class文件。但是这些行为都有一个前提，那就是要进入到你所安装的JDK路径的BIN路径下。。所以path的意义在于配置好环境变量以后，可以不用指定地进入到JDK路径的Bin路径里，但是也有个注意的地方，那就是也得进入到.class文件、.java文件的目录里才能够运行。。 配置方法一：在我的电脑（win7是计算机）&amp;gt;属性&amp;gt;高级系统设置&amp;gt;环境变量&amp;gt;系统变量 的path里改。将自己的JDK安装路径找到，找到BIN目录，把BIN所在的路径复制过去，后面加个 ； 点击确定即可，分号是和后面的隔开，不过这种方法不推荐。
+配置方法二：在我的电脑（win7是计算机）&amp;gt;属性&amp;gt;高级系统设置&amp;gt;环境变量&amp;gt;系统变量，新建一个变量名为 JAVA_HOME 变量值为你自己所安装的JDK路径，比如 把JDK文件夹目录路径复制到变量值里，这里后面就不必加 ; 号了，，因为后面没有东西了 。点击确定 然后修改path ，这里记住一个死公式 %JAVA_HOME% ，在Path的变量值最前面加上这个%JAVA_HOME% 。之后在 %JAVA_HOME% 后面加上 \bin; 记住一定有分号，用于和后面分隔开，也就是说在Path的变量值最前面加上 %JAVA_HOME%\bin; **</description>
+    </item>
+    
+    <item>
+      <title>布尔值也可以作为开关使用</title>
+      <link>https://bytej.github.io/post/%E5%B8%83%E5%B0%94%E5%80%BC%E4%B9%9F%E5%8F%AF%E4%BB%A5%E4%BD%9C%E4%B8%BA%E5%BC%80%E5%85%B3%E4%BD%BF%E7%94%A8/</link>
+      <pubDate>Fri, 25 Sep 2020 02:01:35 +0800</pubDate>
+      
+      <guid>https://bytej.github.io/post/%E5%B8%83%E5%B0%94%E5%80%BC%E4%B9%9F%E5%8F%AF%E4%BB%A5%E4%BD%9C%E4%B8%BA%E5%BC%80%E5%85%B3%E4%BD%BF%E7%94%A8/</guid>
+      <description>有时候可能会遇到尴尬的例子比如。。。
+// 题目：自定义一个整数数组a,读入一个整数n, // 如果n在数组中存在则输出n的下标,反之则输出此整数在数组中不存在 不加布尔的话，正常思路是这样子的。。。 加了布尔之后，可以避免多余的数组重复提示 package day06作业九月二十三;
+import java.util.Scanner;
+public class 第八题 {
+public static void main(String[] args) { // 自定义一个整数数组a,读入一个整数n, // 如果n在数组中存在则输出n的下标,反之则输出此整数在数组中不存在 int[] a = new int[] { 1, 21, 33, 23, 4, 56, 7 }; Scanner scanner = new Scanner(System.in); System.out.println(&amp;quot;请输入整数n&amp;quot;); int n = scanner.nextInt(); *boolean f = true; //加布尔* for (int i = 0; i &amp;lt; a.length; i++) { if (n == a[i]) { System.out.println(n + &amp;quot;存在于数组中，其对应的数组下标是:&amp;quot;); System.</description>
+    </item>
+    
+    <item>
+      <title>郭敬聪创建博客初体验</title>
+      <link>https://bytej.github.io/post/%E9%83%AD%E6%95%AC%E8%81%AA%E5%88%9B%E5%BB%BA%E5%8D%9A%E5%AE%A2%E5%88%9D%E4%BD%93%E9%AA%8C/</link>
+      <pubDate>Fri, 25 Sep 2020 02:01:34 +0800</pubDate>
+      
+      <guid>https://bytej.github.io/post/%E9%83%AD%E6%95%AC%E8%81%AA%E5%88%9B%E5%BB%BA%E5%8D%9A%E5%AE%A2%E5%88%9D%E4%BD%93%E9%AA%8C/</guid>
+      <description>https://blog.csdn.net/oneaka/article/details/108770723
+欢迎观看我的CSDN</description>
+    </item>
+    
+  </channel>
+</rss>

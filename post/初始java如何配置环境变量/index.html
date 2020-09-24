@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en-us">
+  <head>
+    <title>初始java如何配置环境变量 // 郭敬聪博客初体验</title>
+    <meta charset="utf-8" />
+    <meta name="generator" content="Hugo 0.75.1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="John Doe" />
+    <meta name="description" content="" />
+    <link rel="stylesheet" href="https://bytej.github.io/css/main.min.88e7083eff65effb7485b6e6f38d10afbec25093a6fac42d734ce9024d3defbd.css" />
+
+    
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="初始java如何配置环境变量"/>
+<meta name="twitter:description" content="一、简单写出Java特点，写出5个以上，越多越好 简单的、开源的、面向对象的、分布式的、安全的、稳定的、与平台无关的、可解释的、多线的、动态的语言。
+开源：开放源代码 面向对象：Java是一种采用面向对象思想编程的语言，有面向对象的三大特性：封装、继承和多态。 跨平台：一次编写，多平台运行（WriteOne,RunanyWhere） 编译性：写好代码之后，需要先编译，成为字节码文件（.class）。高效、安全 动态性：在程序运行过程中。可以先决定运行的内容，修改运行内容。
+二、请写出Java的版本分类，以及每种版本的应用方向 java的版本： 2.0 确定了java的平台版本： j2me：安卓系统的应用软件。缩小版。 j2se:应用于桌面程序。标准版 j2ee:主要针对网站。企业版。
+java的语法的更改： JAVA5.0之后 javame:缩小版 javase：标准版 javaee：企业版改名 JakartaEE
+JavaMe：最小版本，通常运用于移动端开发。 JavaSe：标准版本，具备了基本的库，用于PC端进行开发。 JavaEE：企业版本，具备了开发网站的功能，用于开发网站。
+三、描述一下JAVA是如何实现跨平台的 JAVA之所以能够跨平台是因为JAVA能够在JDK自带的JRE环境中将.java文件编译成二进制字节流文件.class 这种.class的文件可以在JVM虚拟机中运行出来，所以只要不同的平台上安装了jre和jvm虚拟机，都能够将.class文件运行出来，所谓的跨平台的实质依靠jvm
+四、JDK\JRE\JVM作用及关系 Jvm: Java virtual machine，Java虚拟机，用于运行Jvm标准的语言，相当于java语言运行的一个容器。 Jre:Java runtime environment，java的运行环境 只有容器是不能单独运行的，在运行时，还需要使用其他已经定义好的类。类形成的库，成为类库。Jre= jvm &#43;运行时必须的类库 Jdk: java development kit ,java的开发工具包，Jdk= Jre &#43; 开发工具
+五、简述如何搭建Java开发环境 1、Oracle官网下载，www.oracle.com 菜单—产品&mdash;-java&mdash;-javase，点击下载jdk8u 2、Java的安装： （1）傻瓜式安装，一路点击下一步 （2）注意事项： a.安装路径：尽量不装在C盘，安装路径里不能有中文、安装路径尽量不要包含特殊符号，最好用纯英文和数字 b.jre在安装JDK的过程中会提示安装JRE，一般不需要再次安装JRE,如果一定要安装，确保安装的路径不要和JDK的安装路径重复，否则会覆盖 （3）验证是否安装成功，在CMD里进入JDK的bin所在路径，输入java -version，如果可以看到版本信息，说明成功 六、简述path的意义和配置方法 我们通常运行一个java文件时，首先要安装JDK，我们在运行.java文件时，要先用Javac .java命令将java文件编译成二进制字节码文件.class 然后用Java命令运行.class文件。但是这些行为都有一个前提，那就是要进入到你所安装的JDK路径的BIN路径下。。所以path的意义在于配置好环境变量以后，可以不用指定地进入到JDK路径的Bin路径里，但是也有个注意的地方，那就是也得进入到.class文件、.java文件的目录里才能够运行。。 配置方法一：在我的电脑（win7是计算机）&gt;属性&gt;高级系统设置&gt;环境变量&gt;系统变量 的path里改。将自己的JDK安装路径找到，找到BIN目录，把BIN所在的路径复制过去，后面加个 ； 点击确定即可，分号是和后面的隔开，不过这种方法不推荐。
+配置方法二：在我的电脑（win7是计算机）&gt;属性&gt;高级系统设置&gt;环境变量&gt;系统变量，新建一个变量名为 JAVA_HOME 变量值为你自己所安装的JDK路径，比如 把JDK文件夹目录路径复制到变量值里，这里后面就不必加 ; 号了，，因为后面没有东西了 。点击确定 然后修改path ，这里记住一个死公式 %JAVA_HOME% ，在Path的变量值最前面加上这个%JAVA_HOME% 。之后在 %JAVA_HOME% 后面加上 \bin; 记住一定有分号，用于和后面分隔开，也就是说在Path的变量值最前面加上 %JAVA_HOME%\bin; **"/>
+
+    <meta property="og:title" content="初始java如何配置环境变量" />
+<meta property="og:description" content="一、简单写出Java特点，写出5个以上，越多越好 简单的、开源的、面向对象的、分布式的、安全的、稳定的、与平台无关的、可解释的、多线的、动态的语言。
+开源：开放源代码 面向对象：Java是一种采用面向对象思想编程的语言，有面向对象的三大特性：封装、继承和多态。 跨平台：一次编写，多平台运行（WriteOne,RunanyWhere） 编译性：写好代码之后，需要先编译，成为字节码文件（.class）。高效、安全 动态性：在程序运行过程中。可以先决定运行的内容，修改运行内容。
+二、请写出Java的版本分类，以及每种版本的应用方向 java的版本： 2.0 确定了java的平台版本： j2me：安卓系统的应用软件。缩小版。 j2se:应用于桌面程序。标准版 j2ee:主要针对网站。企业版。
+java的语法的更改： JAVA5.0之后 javame:缩小版 javase：标准版 javaee：企业版改名 JakartaEE
+JavaMe：最小版本，通常运用于移动端开发。 JavaSe：标准版本，具备了基本的库，用于PC端进行开发。 JavaEE：企业版本，具备了开发网站的功能，用于开发网站。
+三、描述一下JAVA是如何实现跨平台的 JAVA之所以能够跨平台是因为JAVA能够在JDK自带的JRE环境中将.java文件编译成二进制字节流文件.class 这种.class的文件可以在JVM虚拟机中运行出来，所以只要不同的平台上安装了jre和jvm虚拟机，都能够将.class文件运行出来，所谓的跨平台的实质依靠jvm
+四、JDK\JRE\JVM作用及关系 Jvm: Java virtual machine，Java虚拟机，用于运行Jvm标准的语言，相当于java语言运行的一个容器。 Jre:Java runtime environment，java的运行环境 只有容器是不能单独运行的，在运行时，还需要使用其他已经定义好的类。类形成的库，成为类库。Jre= jvm &#43;运行时必须的类库 Jdk: java development kit ,java的开发工具包，Jdk= Jre &#43; 开发工具
+五、简述如何搭建Java开发环境 1、Oracle官网下载，www.oracle.com 菜单—产品&mdash;-java&mdash;-javase，点击下载jdk8u 2、Java的安装： （1）傻瓜式安装，一路点击下一步 （2）注意事项： a.安装路径：尽量不装在C盘，安装路径里不能有中文、安装路径尽量不要包含特殊符号，最好用纯英文和数字 b.jre在安装JDK的过程中会提示安装JRE，一般不需要再次安装JRE,如果一定要安装，确保安装的路径不要和JDK的安装路径重复，否则会覆盖 （3）验证是否安装成功，在CMD里进入JDK的bin所在路径，输入java -version，如果可以看到版本信息，说明成功 六、简述path的意义和配置方法 我们通常运行一个java文件时，首先要安装JDK，我们在运行.java文件时，要先用Javac .java命令将java文件编译成二进制字节码文件.class 然后用Java命令运行.class文件。但是这些行为都有一个前提，那就是要进入到你所安装的JDK路径的BIN路径下。。所以path的意义在于配置好环境变量以后，可以不用指定地进入到JDK路径的Bin路径里，但是也有个注意的地方，那就是也得进入到.class文件、.java文件的目录里才能够运行。。 配置方法一：在我的电脑（win7是计算机）&gt;属性&gt;高级系统设置&gt;环境变量&gt;系统变量 的path里改。将自己的JDK安装路径找到，找到BIN目录，把BIN所在的路径复制过去，后面加个 ； 点击确定即可，分号是和后面的隔开，不过这种方法不推荐。
+配置方法二：在我的电脑（win7是计算机）&gt;属性&gt;高级系统设置&gt;环境变量&gt;系统变量，新建一个变量名为 JAVA_HOME 变量值为你自己所安装的JDK路径，比如 把JDK文件夹目录路径复制到变量值里，这里后面就不必加 ; 号了，，因为后面没有东西了 。点击确定 然后修改path ，这里记住一个死公式 %JAVA_HOME% ，在Path的变量值最前面加上这个%JAVA_HOME% 。之后在 %JAVA_HOME% 后面加上 \bin; 记住一定有分号，用于和后面分隔开，也就是说在Path的变量值最前面加上 %JAVA_HOME%\bin; **" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://bytej.github.io/post/%E5%88%9D%E5%A7%8Bjava%E5%A6%82%E4%BD%95%E9%85%8D%E7%BD%AE%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F/" />
+<meta property="article:published_time" content="2020-09-25T02:01:47+08:00" />
+<meta property="article:modified_time" content="2020-09-25T02:01:47+08:00" />
+
+
+  </head>
+  <body>
+    <header class="app-header">
+      <a href="https://bytej.github.io/"><img class="app-header-avatar" src="/avatar.jpg" alt="John Doe" /></a>
+      <h1>郭敬聪博客初体验</h1>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vehicula turpis sit amet elit pretium.</p>
+      <div class="app-header-social">
+        
+      </div>
+    </header>
+    <main class="app-container">
+      
+  <article class="post">
+    <header class="post-header">
+      <h1 class ="post-title">初始java如何配置环境变量</h1>
+      <div class="post-meta">
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-calendar">
+  <title>calendar</title>
+  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line>
+</svg>
+          Sep 25, 2020
+        </div>
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
+  <title>clock</title>
+  <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
+</svg>
+          1 min read
+        </div></div>
+    </header>
+    <div class="post-content">
+      <h2 id="一简单写出java特点写出5个以上越多越好"><strong>一、简单写出Java特点，写出5个以上，越多越好</strong></h2>
+<p>简单的、开源的、面向对象的、分布式的、安全的、稳定的、与平台无关的、可解释的、多线的、动态的语言。</p>
+<p>开源：开放源代码
+面向对象：Java是一种采用面向对象思想编程的语言，有面向对象的三大特性：封装、继承和多态。
+跨平台：一次编写，多平台运行（WriteOne,RunanyWhere）
+编译性：写好代码之后，需要先编译，成为字节码文件（.class）。高效、安全
+动态性：在程序运行过程中。可以先决定运行的内容，修改运行内容。</p>
+<h2 id="二请写出java的版本分类以及每种版本的应用方向"><strong>二、请写出Java的版本分类，以及每种版本的应用方向</strong></h2>
+<p>java的版本： 2.0 确定了java的平台版本：
+j2me：安卓系统的应用软件。缩小版。
+j2se:应用于桌面程序。标准版
+j2ee:主要针对网站。企业版。</p>
+<p>java的语法的更改： JAVA5.0之后
+javame:缩小版
+javase：标准版
+javaee：企业版改名 JakartaEE</p>
+<p>JavaMe：最小版本，通常运用于移动端开发。
+JavaSe：标准版本，具备了基本的库，用于PC端进行开发。
+JavaEE：企业版本，具备了开发网站的功能，用于开发网站。</p>
+<h2 id="三描述一下java是如何实现跨平台的"><strong>三、描述一下JAVA是如何实现跨平台的</strong></h2>
+<p>JAVA之所以能够跨平台是因为JAVA能够在JDK自带的JRE环境中将.java文件编译成二进制字节流文件.class  这种.class的文件可以在JVM虚拟机中运行出来，所以只要不同的平台上安装了jre和jvm虚拟机，都能够将.class文件运行出来，所谓的跨平台的实质依靠jvm</p>
+<h2 id="四jdkjrejvm作用及关系"><strong>四、JDK\JRE\JVM作用及关系</strong></h2>
+<p>Jvm: Java virtual machine，Java虚拟机，用于运行Jvm标准的语言，相当于java语言运行的一个容器。
+Jre:Java runtime environment，java的运行环境
+只有容器是不能单独运行的，在运行时，还需要使用其他已经定义好的类。类形成的库，成为类库。Jre= jvm +运行时必须的类库
+Jdk: java development kit ,java的开发工具包，Jdk= Jre + 开发工具</p>
+<h2 id="五简述如何搭建java开发环境"><strong>五、简述如何搭建Java开发环境</strong></h2>
+<p>1、Oracle官网下载，www.oracle.com
+菜单—产品&mdash;-java&mdash;-javase，点击下载jdk8u
+2、Java的安装：
+（1）傻瓜式安装，一路点击下一步
+（2）注意事项：
+a.安装路径：尽量不装在C盘，安装路径里不能有中文、安装路径尽量不要包含特殊符号，最好用纯英文和数字
+b.jre在安装JDK的过程中会提示安装JRE，一般不需要再次安装JRE,如果一定要安装，确保安装的路径不要和JDK的安装路径重复，否则会覆盖
+（3）验证是否安装成功，在CMD里进入JDK的bin所在路径，输入java -version，如果可以看到版本信息，说明成功
+<img src="https://img-blog.csdnimg.cn/20200901085547875.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L29uZWFrYQ==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述">
+<img src="https://img-blog.csdnimg.cn/2020090108560070.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L29uZWFrYQ==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p>
+<p><img src="https://img-blog.csdnimg.cn/20200901085609223.png#pic_center" alt="在这里插入图片描述"></p>
+<h2 id="六简述path的意义和配置方法"><strong>六、简述path的意义和配置方法</strong></h2>
+<p>我们通常运行一个java文件时，首先要安装JDK，我们在运行.java文件时，要先用Javac  .java命令将java文件编译成二进制字节码文件.class  然后用Java命令运行.class文件。但是这些行为都有一个前提，那就是要进入到你所安装的JDK路径的BIN路径下。。所以path的意义在于配置好环境变量以后，可以不用指定地进入到JDK路径的Bin路径里，但是也有个注意的地方，那就是也得进入到.class文件、.java文件的目录里才能够运行。。
+<strong>配置方法一</strong>：在我的电脑（win7是计算机）&gt;属性&gt;高级系统设置&gt;环境变量&gt;系统变量 的path里改。将自己的JDK安装路径找到，找到BIN目录，把BIN所在的路径复制过去，后面加个 ； 点击确定即可，分号是和后面的隔开，不过这种方法不推荐。</p>
+<p><strong>配置方法二</strong>：在我的电脑（win7是计算机）&gt;属性&gt;高级系统设置&gt;环境变量&gt;系统变量，新建一个变量名为 JAVA_HOME 变量值为你自己所安装的JDK路径，比如
+<img src="https://img-blog.csdnimg.cn/20200901085705446.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L29uZWFrYQ==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p>
+<p>把JDK文件夹目录路径复制到变量值里，这里后面就不必加 ; 号了，，因为后面没有东西了 。点击确定
+<img src="https://img-blog.csdnimg.cn/20200901085713706.png#pic_center" alt="在这里插入图片描述"></p>
+<p>然后修改path ，这里记住一个死公式 %JAVA_HOME% ，在Path的变量值最前面加上这个%JAVA_HOME% 。之后在  %JAVA_HOME% 后面加上 \bin; 记住一定有分号，用于和后面分隔开，也就是说在Path的变量值最前面加上  %JAVA_HOME%\bin;
+<img src="https://img-blog.csdnimg.cn/20200901085724883.png#pic_center" alt="在这里插入图片描述"></p>
+<p>**</p>
+<h2 id="七javac命令和java命令做什么事情呢"><strong>七、javac命令和java命令做什么事情呢？</strong></h2>
+<p>**</p>
+<p>Javac是用来把.java文件编译成二进制字节码.class文件，编译后的.class文件可以用java命令运行。但是必须注意的是，在用记事本编写.java文件时，要保证class后面的词和文件名字要一致，比如说我现在创建了一个文件名为okook.java的文件，我在编写这个文件的时候就要保证文件的第一行内容，class okook{} ，就是说class后面的单词和文件的名字都是okook才可以保证编译成功。
+在okook.java文件写好后，比如</p>
+<p>public class okook
+{
+public static void main(String[] args)
+{
+System.out.println(“My name is TT。。。。”);
+}
+}</p>
+<p>就要执行javac okook.java来把这个文件编译成okook.class。
+最后再用java okook来运行，显示结果如下
+在进行编译和运行时，都要进入okook.java文件所在的目录的路径里，下图红圈位置就是
+<img src="https://img-blog.csdnimg.cn/20200901085736257.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L29uZWFrYQ==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p>
+<p>之后，就要执行javac  okook.java来把这个文件编译成okook.class。注意红圈处，运行结束后发现多了一个okook.class的文件，这个就是刚刚编译的二进制字节码文件，我们就是要这个东西，就算这个时候把okook.java的文件删除了，我们用java okook照样可以运行出来结果。但是如果把okook.class删除了，就无法运行</p>
+<p><img src="https://img-blog.csdnimg.cn/20200901085744723.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L29uZWFrYQ==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p>
+<p>最后再用java okook来运行，显示结果如下
+<img src="https://img-blog.csdnimg.cn/2020090108575314.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L29uZWFrYQ==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p>
+<ul>
+<li>​                        <img src="https://csdnimg.cn/release/blogv2/dist/pc/img/tobarThumbUp.png" alt="img">               点赞</li>
+<li>​                <a href="https://blog.csdn.net/oneaka/article/details/108760992#commentBox">                     <img src="https://csdnimg.cn/release/blogv2/dist/pc/img/tobarComment.png" alt="img">                     评论                                                           </a></li>
+<li>​                <a href="">                     <img src="https://csdnimg.cn/release/blogv2/dist/pc/img/tobarShare.png" alt="img">                     分享                 </a></li>
+<li>​                <a href="">                     <img src="https://csdnimg.cn/release/blogv2/dist/pc/img/tobarCollect.png" alt="img">                                          收藏                                                           </a></li>
+<li>​                <a href="">                     <img src="https://csdnimg.cn/release/blogv2/dist/pc/img/tobarMobile.png" alt="img">                                              手机看                                      </a></li>
+<li>​                                    <img src="https://csdnimg.cn/release/blogv2/dist/pc/img/tobarReward.png" alt="img">                    打赏</li>
+<li>​</li>
+</ul>
+
+    </div>
+    <div class="post-footer">
+      
+    </div>
+  </article>
+
+    </main>
+  </body>
+</html>
